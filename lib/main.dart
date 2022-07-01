@@ -1,7 +1,8 @@
+import 'package:anime_quiz/questions.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(AnimeQuiz());
+  runApp(const AnimeQuiz());
 }
 
 class AnimeQuiz extends StatefulWidget {
@@ -12,13 +13,13 @@ class AnimeQuiz extends StatefulWidget {
 }
 
 class _AnimeQuizState extends State<AnimeQuiz> {
-  List<Icon> Score = [];
+  List<Icon> score = [];
 
-  List<String> Question = [
-    'Did Jiraiya teach Naruto one of his strongest jutsus?',
-    'Naruto faces Kiba, in the Preliminary Round, in Episode 15?',
-    'Does Naruto fight Gaara?',
-    'Is Sakura and Ino rivals in love?',
+  List<Question> questionBank = [
+    Question("Naruto faces Kiba, in the Preliminary Round, in Episode 15?", false),
+    Question('Does Naruto fight Gaara?', true),
+    Question('Is Sakura and Ino rivals in love?', true),
+    Question("Did Jiraiya teach Naruto one of his strongest jutsus?", true),
   ];
 
   int qno =0;
@@ -42,7 +43,7 @@ class _AnimeQuizState extends State<AnimeQuiz> {
                     padding: EdgeInsets.all(10),
                     child: Center(
                       child: Text(
-                        Question[qno],
+                        questionBank[qno].questionText,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
@@ -59,9 +60,10 @@ class _AnimeQuizState extends State<AnimeQuiz> {
                       textColor: Colors.white,
                       color: Colors.green,
                       onPressed: () {
+
                         setState(() {
                           qno++;
-                          Score.add(
+                          score.add(
                             Icon(
                               Icons.check,
                               color: Colors.green,
@@ -83,9 +85,10 @@ class _AnimeQuizState extends State<AnimeQuiz> {
                       textColor: Colors.white,
                       color: Colors.red,
                       onPressed: () {
+
                         setState(() {
                           qno++;
-                          Score.add(
+                          score.add(
                             Icon(
                               Icons.clear,
                               color: Colors.red,
@@ -104,7 +107,7 @@ class _AnimeQuizState extends State<AnimeQuiz> {
                   ),
                 ),
                 Row(
-                  children: Score,
+                  children: score,
                 ),
               ],
             ),
