@@ -32,7 +32,7 @@ class _AnimeQuizState extends State<AnimeQuiz> {
         backgroundColor: Colors.grey.shade900,
         body: SafeArea(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -40,12 +40,12 @@ class _AnimeQuizState extends State<AnimeQuiz> {
                 Expanded(
                   flex: 5,
                   child: Padding(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     child: Center(
                       child: Text(
                         questionBank[qno].questionText,
                         textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 25,
                         ),
@@ -55,7 +55,7 @@ class _AnimeQuizState extends State<AnimeQuiz> {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.all(15.0),
+                    padding: const EdgeInsets.all(15.0),
                     child: FlatButton(
                       textColor: Colors.white,
                       color: Colors.green,
@@ -64,14 +64,14 @@ class _AnimeQuizState extends State<AnimeQuiz> {
                         setState(() {
                           qno++;
                           score.add(
-                            Icon(
+                            const Icon(
                               Icons.check,
                               color: Colors.green,
                             ),
                           );
                         });
                       },
-                      child: Text(
+                      child: const Text(
                         'True',
                         style: TextStyle(fontSize: 20),
                       ),
@@ -80,7 +80,7 @@ class _AnimeQuizState extends State<AnimeQuiz> {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.all(15),
+                    padding: const EdgeInsets.all(15),
                     child: FlatButton(
                       textColor: Colors.white,
                       color: Colors.red,
@@ -89,14 +89,14 @@ class _AnimeQuizState extends State<AnimeQuiz> {
                         setState(() {
                           qno++;
                           score.add(
-                            Icon(
+                            const Icon(
                               Icons.clear,
                               color: Colors.red,
                             ),
                           );
                         });
                       },
-                      child: Text(
+                      child: const Text(
                         'False',
                         style: TextStyle(
                           fontSize: 20,
